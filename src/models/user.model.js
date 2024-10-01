@@ -38,31 +38,6 @@ const userSchema = mongoose.Schema(
         type: String,
       },
     ],
-    connections: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "User",
-        unique: true,
-      },
-    ],
-    jobPosts: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "JobPost",
-      },
-    ],
-    blogPosts: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "BlogPost",
-      },
-    ],
-    companyDetails: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "CompanyDetail",
-      },
-    ],
     role: {
       type: String,
       enum: [
@@ -74,7 +49,10 @@ const userSchema = mongoose.Schema(
         "member",
       ],
       required: true,
-      default: "member"
+      default: "member",
+    },
+    refreshToken: {
+      type: String,
     },
   },
   { timestamps: true }
