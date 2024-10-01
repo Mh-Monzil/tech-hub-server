@@ -38,6 +38,12 @@ const userSchema = mongoose.Schema(
         type: String,
       },
     ],
+    connections: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Connection",
+      },
+    ],
     role: {
       type: String,
       enum: [

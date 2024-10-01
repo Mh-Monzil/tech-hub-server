@@ -10,16 +10,25 @@ const jobPostSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    salary: {
+      type: String,
+      required: true,
+    },
     companyName: {
       type: String,
       required: true,
     },
     location: {
       type: String,
+      required: true,
     },
     postedBy: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
+      required: true,
+    },
+    jobTypes: {
+      type: [String],
       required: true,
     },
   },
